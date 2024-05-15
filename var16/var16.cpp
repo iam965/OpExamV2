@@ -84,8 +84,8 @@
 //    }
 //}
 //
-//int* count(student* arr, int n, bool &flag) {
-//    int* arr1 = new int[5];
+//int* count(student* arr, int n) {
+//    int* arr1 = new int[2];
 //    int i = 0;
 //    while (i < 5) {
 //        arr1[i] = 0;
@@ -93,42 +93,26 @@
 //    }
 //    i = 0;
 //    while (i < n) {
-//        if (arr[i].mark < 3) {
-//            arr1[arr[i].course - 1]++;
-//            flag = true;
+//        if (arr[i].mark > 3 && arr[i].mark < 4) {
+//            arr1[0]++;
+//        }
+//        if (arr[i]. mark > 4) {
+//            arr1[1]++;
 //        }
 //        i++;
 //    }
 //    return arr1;
 //}
 //
-//int findMin(int* arr1) {
-//    int i = 0, min = 0, minn = 0;
-//    bool flag = false;
-//    while (i < 5) {
-//        if (arr1[i] != 0) {
-//            if (!flag) {
-//                min = arr1[i];
-//                minn = i;
-//                flag = true;
-//            } else {
-//                if (arr1[i] < min) {
-//                    min = arr1[i];
-//                    minn = i;
-//                }
-//            }
-//        }
-//        i++;
-//    }
-//    return minn;
-//}
-//
-//void check(int* arr1, bool flag) {
-//    if (!flag) {
-//        cout << "Ура, двоечников нет!" << endl;
+//void check(int* arr1) {
+//    if (arr1[0] == arr1[1]) {
+//        cout << "На факультете поровну троечников и отличников" << endl;
 //    } else {
-//        int min = findMin(arr1);
-//        cout << "На " << min + 1 << " курсе меньше всего двоечников" << endl;
+//        if (arr1[0] > arr1[1]) {
+//            cout << "На факультете больше троечников" << endl;
+//        } else {
+//            cout << "На факультете больше отличников" << endl;
+//        }
 //    }
 //}
 //
@@ -145,9 +129,8 @@
 //    int n = inputn();
 //    student* arr = getArr(n);
 //    printArr(arr, n);
-//    bool flag = false;
-//    int* arr1 = count(arr, n, flag);
-//    check(arr1, flag);
+//    int* arr1 = count(arr, n);
+//    check(arr1);
 //    cleanMem(arr, arr1);
 //    return 0;
 //}
